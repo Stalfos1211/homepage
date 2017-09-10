@@ -5,6 +5,8 @@ const port = process.env.port || 3000
 const mainRoutes = require('./../routes');
 const apiRoutes = require('./../routes/api');
 
+app.use(bodyParser.urlencoded({extended: false}));
+app.set('view engine', 'pug');
 app.use(mainRoutes);
 app.use(apiRoutes);
 
